@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
-// const { URI } = require("./config");
 const dotenv = require("dotenv");
 
 dotenv.config();
