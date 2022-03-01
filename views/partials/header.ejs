@@ -1,0 +1,26 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBook</title>
+  <link rel="icon" href="/img/logo-book.ico">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="/">
+      <img src="/img/logo-book.png" alt="logo" width="85">
+    </a>
+    <ul>
+      <% if (user) { %>
+        <li>Welcome, <%= user.email %>
+        </li>
+        <li><a href="/logout">Log out</a></li>
+        <% } else { %>
+          <li><a href="/login">Log in</a></li>
+          <li><a href="/signup" class="btn btn-auth">Sign up</a></li>
+          <% } %>
+    </ul>
+  </nav>
