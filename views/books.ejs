@@ -1,21 +1,24 @@
 <%- include('partials/header'); -%>
   <main class="main-page">
-    <ul class="recipes">
-      <li class="book">
-        <img src="/books.png" alt="books icon">
-        <h4>first book</h4>
-        <p>Lorem ipsum dolor sit arjet</p>
-      </li>
-      <li class="book">
-        <img src="/books.png" alt="books icon">
-        <h4>second book</h4>
-        <p>Lorem ipsum dolor, sit consectetur adipisicing elit</p>
-      </li>
-      <li class="book">
-        <img src="/books.png" alt="book icon">
-        <h4>third book</h4>
-        <p>Lorem ipsum dolor sit amet consectetur</p>
-      </li>
+    <h2>all books</h2>
+    <ul class="books">
+      <% for(i=0;i<books.length;i++){ %>
+        <li>
+          <h3>
+            <%= books[i].title %>
+          </h3>
+          <img src="uploads/<%=books[i].cover.substring(12) %>" alt="<%= books[i].title %>" width="350">
+          <p>
+            <%= books[i].description %>
+          </p>
+          <p>
+            author: <%= books[i].author %>
+          </p>
+          <p>year: <%= books[i].year %>
+          </p>
+          <a href="uploads/<%=books[i].path.substring(12) %>" class="btn btn-read">read book</a>
+        </li>
+        <% } %>
     </ul>
   </main>
   <%- include('partials/footer'); -%>
