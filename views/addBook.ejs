@@ -1,0 +1,63 @@
+<%- include('partials/header'); -%>
+    <main class="main-page">
+        <h2>add book</h2>
+        <form enctype="multipart/form-data">
+            <div class="msg success" id="success"></div>
+            <div class="msg error" id="error"></div>
+            <input type="text" name="title" id="" placeholder="title">
+            <input type="text" name="description" id="" placeholder="description">
+            <input type="text" name="author" id="" placeholder="author">
+            <input type="text" name="year" id="" placeholder="year">
+            *only png, jpg or jpeg
+            <input type="file" name="cover" id="" placeholder="only png or jpeg"
+                accept="image/png, image/jpeg, image/jpg">
+            *only pdf
+            <input type="file" name="path" id="" placeholder="only pdf">
+            <button>add book</button>
+        </form>
+    </main>
+    <%- include('partials/footer'); -%>
+
+        <script>
+            const form = document.querySelector('form');
+            const msgSuccess = document.getElementById('success');
+            const msgError = document.getElementById('error');
+
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                // reset msg
+                msgError.textContent = '';
+                msgSuccess.textContent = '';
+                // get values
+                const title = form.title.value;
+                const description = form.description.value;
+                const author = form.author.value;
+                const year = form.year.value;
+                const path = form.path.value;
+                const cover = form.cover.value;
+
+                try {
+                    const res = await fetch('/add-book', {
+                        method: 'POST',
+                        body: JSON.stringify({
+                            title,
+                            description, author, year,
+                            path,
+                            cover
+                        }),
+                        headers: { 'Content-Type': 'multipart/form-data' }
+                    });
+                    const data = await res.json();
+                    console.log(data);
+                    if (data.book) {
+                        msgSuccess.textContent = "book added successfully"
+                    }
+                    else {
+                        msgError.textContent = "something went wrong"
+                    }
+                }
+                catch (err) {
+                    console.log(err);
+                }
+            });
+        </script>
