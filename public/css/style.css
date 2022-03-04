@@ -28,6 +28,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    flex-wrap: wrap;
     margin-bottom: 5rem;
     padding: 0.5rem 1rem;
 }
@@ -67,9 +68,9 @@ form {
     width: 360px;
     margin: 0 auto;
     padding: 30px;
-    box-shadow: 1px 2px 3px rgba(0,0,0,0.1);
     border-radius: 10px;
-    background: white;
+    /* box-shadow: 1px 2px 3px rgba(0,0,0,0.1); */
+    background: rgb(253, 253, 250);
 }
 form h2 {
     font-size: 2.4em;
@@ -77,11 +78,16 @@ form h2 {
     margin-bottom: 40px;
 }
 input {
+    width: 100%;
     padding: 10px 12px;
+    font-size: 1em;
     border-radius: 4px;
     border: 1px solid #ddd;
-    font-size: 1em;
-    width: 100%;
+    background: rgb(253, 253, 250);
+}
+input:focus, input:active {
+    border: 2px solid #3ea490;
+    outline: none;
 }
 label {
     display: block;
@@ -138,6 +144,7 @@ header {
 }
 header img {
     margin-right: 2.5rem;
+    /* width: 100%; */
 }
 header h2 {
     font-size: 3em;
@@ -168,6 +175,7 @@ footer {
     display: flex;
     text-align: center;
     margin-top: 3rem;
+    margin-bottom: auto;
     padding: 1rem;
     position: relative;
     bottom: 0;
@@ -176,4 +184,41 @@ footer {
 .footer-bottom {
     align-self: flex-end;
     margin-left: auto;
+}
+
+/* responsive */
+@media only screen and (max-width: 990px) {
+    nav {
+        justify-content: center;
+    }
+    nav li {
+        margin-left: 0;
+    }
+    header {
+        flex-direction: column;
+    }
+    .headings {
+        text-align: center;
+    }
+    footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .footer-bottom {
+        align-self: center;
+        margin: 1rem auto 0 auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    nav {
+        margin-bottom: 3rem;
+    }
+    header img {
+        width: 100%;
+    }
+    .book {
+        width: auto !important;
+    }
+
 }
