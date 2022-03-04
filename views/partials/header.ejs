@@ -11,12 +11,13 @@
 
 <body>
   <nav>
-    <a href="/">
+    <a href="/" class="logo">
       <img src="/img/logo-book.png" alt="logo" width="85">
+      <span>eBookCollection</span>
     </a>
     <ul>
       <% if (user) { %>
-        <li>Welcome, <%= user.email %>
+        <li>welcome, <%= user.email %>
         </li>
         <li><a href="/logout">Log out</a></li>
         <% } else { %>

@@ -4,15 +4,14 @@
         <form enctype="multipart/form-data">
             <div class="msg success" id="success"></div>
             <div class="msg error" id="error"></div>
-            <input type="text" name="title" id="" placeholder="title">
-            <input type="text" name="description" id="" placeholder="description">
-            <input type="text" name="author" id="" placeholder="author">
-            <input type="text" name="year" id="" placeholder="year">
+            <input type="text" name="title" placeholder="title">
+            <input type="text" name="description" placeholder="description">
+            <input type="text" name="author" placeholder="author">
+            <input type="text" name="year" placeholder="year">
             *only png, jpg or jpeg
-            <input type="file" name="cover" id="" placeholder="only png or jpeg"
-                accept="image/png, image/jpeg, image/jpg">
+            <input type="file" name="cover" placeholder="only png or jpeg" accept="image/png, image/jpeg, image/jpg">
             *only pdf
-            <input type="file" name="path" id="" placeholder="only pdf">
+            <input type="file" name="path" accept="application/pdf" placeholder="only pdf">
             <button>add book</button>
         </form>
     </main>
@@ -45,7 +44,7 @@
                             path,
                             cover
                         }),
-                        headers: { 'Content-Type': 'multipart/form-data' }
+                        headers: { 'Content-Type': 'application/json' }
                     });
                     const data = await res.json();
                     console.log(data);
