@@ -42,7 +42,7 @@ app.listen(port, () => {
 
 // routes
 app.get('*', checkUser);
-app.get('/', (req, res) => res.render('home'));
+app.get('/', (req, res) => res.render('index'));
 // app.get('/books', requireAuth, getBooks, (req, res) => res.render('books'));
 app.get('/add-book', requireAuth, (req, res) => res.render('addBook'));
 app.use(authRoutes);
