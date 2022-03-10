@@ -38,13 +38,11 @@ mongoose.connect(URI,
 const port = process.env.PORT || 3000
 app.listen(port, () => {
     console.log(`Server has been started on port: ${port}`)
-    console.log("process.env.PORT:", process.env.PORT)
 })
 
 // routes
 app.get('*', checkUser);
 app.get('/', (req, res) => res.render('index'));
-// app.get('/books', requireAuth, getBooks, (req, res) => res.render('books'));
 app.get('/add-book', requireAuth, (req, res) => res.render('addBook'));
 app.use(authRoutes);
 app.use(bookRoutes);

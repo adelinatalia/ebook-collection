@@ -1,6 +1,6 @@
-const multer = require("multer")
+// const multer = require("multer")
 
-const uploadPath = "../../books"
+const uploadPath = "../../files"
 
 const upload = multer({
     dest: uploadPath
