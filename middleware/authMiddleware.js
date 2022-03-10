@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 // const { secretKey } = require('../config')
+const dotenv = require("dotenv");
+dotenv.config();
 
 const requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
