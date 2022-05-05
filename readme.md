@@ -5,7 +5,11 @@ You can access for free after login.
 
 ## Preview
 
-<img src="./public/img/ebook-collection.PNG" width="550" alt="screenshot">
+<img src="./public/img/screenshots/ebooks-home.jpg" width="550" alt="home page">
+
+<img src="./public/img/screenshots/ebooks.png" width="550" alt="all books">
+
+<img src="./public/img/screenshots/ebooks-login.png" width="550" alt="login">
 
 
 Enjoy at your leisure.
