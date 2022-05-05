@@ -1,4 +1,4 @@
-# eBook Collection
+# eBooks Collection
 
 Browse the collections of books and read them online.
 You can access for free after login.
