@@ -156,8 +156,8 @@ header {
     align-items: center;
 }
 
-header img {
-    margin-right: 2.5rem;
+.header-img {
+    margin-right: 2rem;
     /* width: 100%; */
 }
 
